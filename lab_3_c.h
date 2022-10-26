@@ -66,7 +66,7 @@ int main() {
 // В случае, если значение b не встречается в исходном массиве — вывести соответствующее сообщение.
 //#include <time.h>
 //#include <stdlib.h>
-//#include <locale>
+//#include <locale.h>
 //int main() {
 //	setlocale(LC_ALL, "Rus");
 //	srand(time(NULL));
