@@ -1,3 +1,4 @@
+//Выполнить RLE Сжатие файла
 #include <iostream>
 #include <fstream>
 using namespace std;
