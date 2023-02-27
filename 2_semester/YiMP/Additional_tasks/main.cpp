@@ -1,3 +1,9 @@
+// Напишите программу, которая находит все решения заданного вам уравнения на интервале [-5;5].
+// Программа должна выполнить следующие действия:
+// 1. Определяет и выводит на экран интервалы, на которых расположены корни уравнения.
+// 2. На каждом интервале, используя метод перебора, ищет решение с точностью 0,001 и выводит
+// полученные решения на экран.
+// Вычисление функции, стоящей в левой части уравнения, оформите в виде подпрограммы.
 #include <iostream>
 #include <math.h>
 #include <iomanip>
@@ -24,16 +30,3 @@ int main(){
         }
     }
 }
-//#include <stdio.h>#include <math.h>
-//double f(double x){
-//    return pow(x ,3 ) + 2*pow(x ,2) - 8*x + 1 + 5*sin(x) - 12 * cos(x);}
-//int main(){
-//    double y;    double left, right;
-//    double eps = 0.001;    double delta = 2 * eps;
-//    double x = -5;    while(x <= 5){
-//        if(f(x)*f(x+delta) < 0){            left = x;
-//            right = x + delta;            y = (left + right) / 2;
-//            printf("Diaposon %.3f ; %.3f\n", left, right);            printf("Root = %.3f\n", y + eps);
-//        }        x += delta;
-//    }}
-//
