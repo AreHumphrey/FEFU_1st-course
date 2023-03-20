@@ -4,18 +4,17 @@ using namespace std;
 float F(float x) {
     return 3. / 2 * sqrt(4 - x * x);
 }
-float Func() {
-    float Step = 0.01,
-            Len = 0, x = 0;
-    while (x <= 2 and (x + Step) * (x + Step) < 4) {
-        Len += sqrt((F(x + Step) - F(x)) * (F(x + Step) - F(x)) + (Step * Step));
-        x += Step;
-    }
-    return Len * 4;
-}
 int main() {
-    float Disk = Func();
-    float Ram = M_PI * (15 - sqrt(99));
-    cout << Disk << endl << Ram << endl;
-    cout << (Ram - Disk) / Ram * 100 << "%";
+  float x = -2;
+  float b = 1.99;
+  float h = 0.01;
+  double L = 0;
+  while( x < b ) {
+    float y1 = F(x);
+    float y2 = F(x+h);
+    L += sqrt(h*h + (y2-y1)*(y2-y1));
+    x += h;
+  }
+  cout << "Длина кривой " << fixed
+  << setw(10) << setprecision(3) << L*2;
 }
