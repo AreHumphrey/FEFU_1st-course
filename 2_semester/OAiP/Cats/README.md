@@ -1,2 +1,2 @@
 ### _Ссылка на контест этого семестра по дисциплине "Основы алгоритмизации и программирования":_
-_https://imcs.dvfu.ru/cats/problems?cid=6637732;sid=_
+## _https://imcs.dvfu.ru/cats/static/problem_text-cid-6637732.html_
