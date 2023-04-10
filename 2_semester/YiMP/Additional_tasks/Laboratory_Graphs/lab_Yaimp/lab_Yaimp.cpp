@@ -76,11 +76,11 @@ void axes(float Number)
 
 // Данная Функция
 float F1(float x) {
-    return pow(x, 3) + 2 * pow(x, 2) - 2 * x + 1;
+    return pow(x, 3) + 2 * pow(x, 2) - 8 * x + 1;
 }
 
 float F2(float x) {
-    return -12 * sin(x) + 1 * cos(x);
+    return -12 * sin(x) + 8 * cos(x);
 }
 // Построение графика функции
 void Plot(float Func(float), float Boundaries, int color) {
