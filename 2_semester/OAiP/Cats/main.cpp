@@ -1,38 +1,28 @@
+#include <iostream>
 #include <fstream>
 #include <vector>
-#include <queue>
-#include <functional>
-#include <cassert>
+#include <set>
+using namespace std;
 
-struct Rect {
-    int x, y;
-};
+typedef set<long long> Numbers;
 
 int main() {
-    std::ifstream input("power.in");
-    std::ofstream output("power.out");
-    int n, k;
-    input >> n >> k;
-    std::vector<Rect> rects(n);
-    for (int i = 0; i < n; ++i) {
-        input >> rects[i].x >> rects[i].y;
-    }
-    std::sort(rects.begin(), rects.end(), [](const Rect &left, const Rect &right) {
-        return left.y > right.y;
+    Numbers setn;
+    ifstream InPut("input.txt");
+    ofstream OutPut("output.txt");
+    long long num;
+    for (; InPut >> num;) {
+        if (num > 0) setn.insert(num);
+        if (num < 0) setn.erase(-num);
+        if (num == 0) {
+            set<long long>::iterator it;
+            for (it = setn.begin(); it != setn.end(); it++) {
+                OutPut << *it << " ";
+            }
+            break;
 
-    });
-    std::priority_queue<int, std::vector<int>, std::greater<>> xs;
-    long long maxSquare = 0;
-    for (const Rect &r: rects) {
-        xs.push(r.x);
-        if (xs.size() > k) {
-            xs.pop();
-        }
-        assert(xs.size() <= k);
-        if (xs.size() == k) {
-            maxSquare = std::max(maxSquare, 1LL * r.y * xs.top());
         }
     }
-    output << maxSquare;
+    return 0;
 
 }
