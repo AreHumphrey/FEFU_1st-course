@@ -17,12 +17,12 @@ bool Permutation(int *a, int n) {
     while (j != -1 && a[j] >= a[j + 1])
         j--;
     if (j == -1)
-        return false; // больше перестановок нет
+        return false; 
     int k = n - 1;
     while (a[j] >= a[k])
         k--;
     swap(a, j, k);
-    int l = j + 1, r = n - 1; // сортируем оставшуюся часть последовательности
+    int l = j + 1, r = n - 1; 
     while (l<r)
         swap(a, l++, r--);
     return true;
