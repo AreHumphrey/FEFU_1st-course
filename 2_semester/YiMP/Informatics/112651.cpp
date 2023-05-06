@@ -17,7 +17,7 @@ int main() {
     }
     int s, t;
     std::cin >> s >> t;
-    s--; // перенумерация с 0
+    s--; 
     t--;
     std::vector<int> dist(n, INF);
     std::vector<int> path(n, -1);
