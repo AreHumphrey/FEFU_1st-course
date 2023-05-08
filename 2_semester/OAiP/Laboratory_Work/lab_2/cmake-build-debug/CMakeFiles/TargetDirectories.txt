@@ -1,0 +1,3 @@
+C:/Dina/lab_2/cmake-build-debug/CMakeFiles/lab_2.dir
+C:/Dina/lab_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Dina/lab_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
