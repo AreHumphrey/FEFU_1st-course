@@ -146,9 +146,9 @@ AVLTree *DeleteNode(AVLTree *root, int key) {
     }
     return root;
 }
-AVLTree *FindNode(AVLTree *node, int key) {
+int FindNode(AVLTree *node, int key) {
     if (node == nullptr || node->key == key) {
-        return node;
+        return node->key;
     } else if (key < node->key) {
         return FindNode(node->left, key);
     } else {
