@@ -3,18 +3,19 @@
 #include "Bin_Tree.cpp"
 #include "AVL_Tree.cpp"
 #include "Anagram.cpp"
-void task1(){
+
+void task1() {
     SetConsoleOutputCP(CP_UTF8);
     std::string s;
     std::cout << "Введите строку:\n ";
     std::cin >> s;
-    if (Palindrome(s)){
+    if (Palindrome(s)) {
         std::cout << "Cтрока является палиндромом" << std::endl;
-    }
-    else{
+    } else {
         std::cout << "Cтрока не является палиндромом" << std::endl;
     }
 }
+
 void task2() {
     int arr[5] = {-2, 3, 48, 8, -1};
     BinTree *root = CreateBinTree(0);
@@ -39,6 +40,12 @@ void task3() {
     std::cout << std::endl;
     root = DeleteNode(root, 5);
     Print(root);
+//    std::cout << FindNode(root, 8);
+    root = Insert(root, 4);
+    std::cout << std::endl;
+    Print(root);
+
+
 }
 
 void task4() {
@@ -59,44 +66,24 @@ void task4() {
 
 void task5() {
     SetConsoleOutputCP(CP_UTF8);
-    std::string str, substr, newSubstr, result;
-    bool found = false;
-    std::cout << "Введите строку:\n ";
-    std::cin >> str;
-    std::cout << "Введите подстроку, которую нужно заменить:\n ";
-    std::cin >> substr;
+    std::string str, substr, newSubstr;
+    std::cout << "Введите строку:\n";
+    std::getline(std::cin, str);
+    std::cout << "Введите подстроку, которую нужно заменить:\n";
+    std::getline(std::cin, substr);
     std::cout << "Введите новую подстроку:\n";
-    std::cin >> newSubstr;
-    // Поиск подстроки в строке (алгоритм Бойера-Мура)
-    int slen = str.length(), sublen = substr.length();
-    int shift[256];
-    for (int i = 0; i < 256; i++) {
-        shift[i] = sublen;
-    }
-    for (int i = 0; i < sublen - 1; i++) {
-        shift[substr[i]] = sublen - i - 1;
-    }
-    int pos = sublen - 1;
-    while (pos < slen) {
-        int j = sublen - 1;
-        while (j >= 0 && str[pos] == substr[j]) {
-            pos--;
-            j--;
-        }
-        if (j < 0) {
-            found = true;
-            result = str.substr(0, pos + 1) + newSubstr + str.substr(pos + sublen);
-            break;
-        }
-        pos += shift[str[pos]];
-    }
-    if (!found) {
-        std::cout << "Подстрока не найдена" << std::endl;
+    std::getline(std::cin, newSubstr);
+    // Поиск первого вхождения подстроки
+    size_t pos = str.find(substr);
+    if (pos != std::string::npos) {
+        // Заменяем подстроку на новую в указанной позиции
+        str.replace(pos, substr.length(), newSubstr);
+        std::cout << "Новая строка:\n " << str << std::endl;
     } else {
-        std::cout << "Новая строка:\t " << result << std::endl;
+        std::cout << "Подстрока не найдена" << std::endl;
     }
 }
 
 int main() {
-    task1();
+    task5();
 }
